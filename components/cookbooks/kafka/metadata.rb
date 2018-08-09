@@ -20,7 +20,7 @@ attribute 'version',
     :category => '1.Global',
     :help => 'Version of kafka',
     :order => 1,
-    :form => {'field' => 'select', 'options_for_select' => [['0.10.2.0', '0.10.2.0'],['1.0.0', '1.0.0']]}
+    :form => {'field' => 'select', 'options_for_select' => [['0.10.2.0', '0.10.2.0'],['1.0.0', '1.0.0'],['1.1.1-beta', '1.1.1']]}
   }
 
 attribute 'use_external_zookeeper',
