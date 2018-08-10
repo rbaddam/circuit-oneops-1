@@ -61,7 +61,13 @@ if kafka_version.to_i < 1
     command "rpm -i #{kafka_rpm} --force"
   end
 else
-  kafka_download = "https://repository.walmart.com/content/repositories/public/org/apache/kafka/kafka_2.11/#{kafka_version}/kafka_2.11-#{kafka_version}.tgz"
+  
+  if kafka_version.to_i < 1
+    kafka_download = "https://repository.walmart.com/content/repositories/public/org/apache/kafka/kafka_2.11/#{kafka_version}/kafka_2.11-#{kafka_version}.tgz"
+  else
+    kafka_download = "https://repository.walmart.com/repository/apache-dist-archive/kafka/#{kafka_version}/kafka_2.11-#{kafka_version}.tgz"
+  end
+
   `rm -rf /usr/local/kafka/* && mkdir -p /usr/local/kafka`
 
   remote_file "/usr/local/kafka/kafka_2.11-#{kafka_version}.tgz" do
