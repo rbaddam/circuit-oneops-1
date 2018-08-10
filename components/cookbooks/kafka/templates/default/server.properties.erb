@@ -1,5 +1,5 @@
 <% JSON.parse(node.workorder.rfcCi.ciAttributes[:kafka_properties]).each do |param,value| %>
-<% if param == 'log.dirs' || param == 'log.dir' || param == 'reserved.broker.max.id' || param == 'zookeeper.connect' %>
+<% if param == 'log.dirs' || param == 'log.dir' || param == 'reserved.broker.max.id' || param == 'zookeeper.connect' || (param == 'listeners' && value == 'host')%>
 ##############################################
 #  customer specification below is ignored
 #  <%= param %>=<%= value %>
